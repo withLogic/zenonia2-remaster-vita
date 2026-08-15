@@ -60,4 +60,13 @@ typedef struct {
 void controls_init();
 void controls_poll();
 
+#define AVK_SELECT 0
+#define AVK_UP     1
+#define AVK_DOWN   2
+#define AVK_LEFT   3
+#define AVK_RIGHT  4
+#define AVK_CLR    5
+#define AVK_SEND   6
+#define AVK_END    7
+
 #endif // SOLOADER_CONTROLS_H

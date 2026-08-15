@@ -12,12 +12,12 @@
 
 #define CONFIG_FILE_PATH DATA_PATH"config.txt"
 
-int  setting_sampleSetting;
-bool setting_sampleSetting2;
+bool settings_capframerate;
+int settings_graphicsqualty;
 
 void settings_reset() {
-    setting_sampleSetting  = 1;
-    setting_sampleSetting2 = true;
+    settings_capframerate  = true;
+    settings_graphicsqualty = 0;
 }
 
 void settings_load() {
@@ -30,8 +30,8 @@ void settings_load() {
 
     if (config) {
         while (EOF != fscanf(config, "%[^ ] %d\n", buffer, &value)) {
-            if 		(strcmp("setting_sampleSetting", buffer) == 0) 	setting_sampleSetting  = (int)value;
-            else if (strcmp("setting_sampleSetting2", buffer) == 0) setting_sampleSetting2 = (bool)value;
+            if 		(strcmp("CapFramerate", buffer) == 0) 	settings_capframerate  = (bool)value;
+            else if (strcmp("GraphicsQuality", buffer) == 0) settings_graphicsqualty = (int)value;
         }
         fclose(config);
     }
@@ -41,8 +41,8 @@ void settings_save() {
     FILE *config = fopen(CONFIG_FILE_PATH, "w+");
 
     if (config) {
-        fprintf(config, "%s %d\n", "setting_sampleSetting", (int)(setting_sampleSetting));
-        fprintf(config, "%s %d\n", "setting_sampleSetting2", (int)(setting_sampleSetting2));
+        fprintf(config, "%s %d\n", "CapFramerate", (bool)(settings_capframerate));
+        fprintf(config, "%s %d\n", "GraphicsQuality", (int)(settings_graphicsqualty));
         fclose(config);
     }
 }
