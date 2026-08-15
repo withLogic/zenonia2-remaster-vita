@@ -11,9 +11,8 @@ By doing so, it's basically as if we emulate a minimalist Android environment in
 
 - The loader has been tested with the original Zenonia 2 Remaster release and the Zenonia2noui variant.
 - Editing the config.txt file at ux0:/data/zenonia2/ yields two configuration options:
-    CapFramerate, 0 or 1. This sets the framerate to 30fps. Uncapping it allows the game to reach 60fps in some areas. Note that the game logic is tied to the framerate. 
-    GraphicsQuality, 0, 1, 2. This sets the graphics quality setting. The game defaults to its lowest setting.
-- The 
+    - CapFramerate, 0 or 1. This sets the framerate to 30fps. Uncapping it allows the game to reach 60fps in some areas. Note that the game logic is tied to the framerate. 
+    - GraphicsQuality, 0, 1, 2. This sets the graphics quality setting. The game defaults to its lowest setting.
 
 ## Controls
 - Left Analog: Move
